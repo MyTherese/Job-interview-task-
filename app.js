@@ -10,26 +10,20 @@ const gettwoEnteries = (arr, sum) => {
 
     objectKeys = {};
     const resultsTwosum = [];
-  
     //loopar genom array ett element i taget
     for(let i = 0; i < arr.length; i++){
-    //key value från objectKeys blir kontrollerad av loopen 
-        if(objectKeys[arr[i]]){
-            console.log("the first worked")
-            // pushar object med key/values till en tom array 
-            let objSumoftwo = ([objectKeys[arr[i]], arr[i]]);
-            console.log(objSumoftwo)
 
-            // calculation output of sumOf Two
+        if(objectKeys[arr[i]]){
+
             let objvalueOne = objectKeys[arr[i]];
             let objvalueTwo = arr[i];
-
+    
             let multiplieSumofTwo = (objvalueOne, objvalueTwo) => objvalueOne * objvalueTwo;
+
             problemOne.innerHTML = `${objvalueOne} * ${objvalueTwo} = ` + multiplieSumofTwo(objvalueOne, objvalueTwo);
             //push elemnt av två till empty array av results
             resultsTwosum.push([objectKeys[arr[i]], arr[i]])
         }else{
-            
             objectKeys[sum - arr[i]] = arr[i];
         }
         }
@@ -37,23 +31,24 @@ const gettwoEnteries = (arr, sum) => {
 }
 
 
-
-
-
-
-
-// no duplicate removed in this
-const getthreeEnteries = (array, sumsum) => {
-   
+const getthreeEnteries = (array, specifikSum) => {
     objectKeysOfthree = {};
     const resultsThreeSum = [];
-    
+
     for(let i = 0; i < array.length -1; i++){
         for(let j = i + 1; j < array.length; j++){
             for(let k = j + 1; k < array.length; k++){
-                if(sumsum === array[i] + array[j] + array[k]){
+                if(specifikSum === array[i] + array[j] + array[k]){
                     console.log("works");
-                resultsThreeSum.push(array[i], array[j], array[k] )
+                resultsThreeSum.push(array[i], array[j], array[k])
+
+                let objvalueOne = array[i];
+                let objvalueTwo = array[j];
+                let objvalueOneTwo  = objvalueOne * objvalueTwo;
+                let objvalueThree = array[k];
+
+                let multiplieSumofThree =(objvalueOneTwo, objvalueThree) => objvalueOneTwo * objvalueThree;
+                problemTwo.innerHTML = ` ${objvalueOneTwo} * ${objvalueThree} = ` +  multiplieSumofThree(objvalueOneTwo, objvalueThree);
                 }
             }
         }
@@ -61,7 +56,6 @@ const getthreeEnteries = (array, sumsum) => {
     return resultsThreeSum;    
 
 }
-
 
 console.log(gettwoEnteries(arrayExpenses, 2020));
 console.log(getthreeEnteries(arrayExpenses, 2020));
