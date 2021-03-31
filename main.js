@@ -24,20 +24,20 @@ const sumOfTwoloops = (arr, sum) => {
                 let objvalueResul = objvalueOne * objvalueTwo;
                 let numberFormat  = new Intl.NumberFormat('fr-FR').format(objvalueResul);
 
-                problemTwo.innerHTML = `Sum of two using loops: 631 * 1389 = ${numberFormat}`;
+                problemOne.innerHTML = `Sum of two using loops: 631 * 1389 = ${numberFormat}`;
                 noHash.push(arr[i], arr[j]);
             }
         }
 
         let timeEnd = performance.now();
         let time = timeEnd - timeStart;
-        perforTimeTwo.innerHTML = `It took ${time} miliseconds`;
+        perforTimeOne.innerHTML = `It took ${time} miliseconds`;
         }
     
         return noHash;
 }
 
-console.log(sumOfTwoloops (arrayExpenses, 2020));
+console.log(sumOfTwoloops(arrayExpenses, 2020));
 
 // SUM OF TWO USING HASH
 const sumOfTwohash = (array, specifikSum) => {
@@ -54,7 +54,7 @@ const sumOfTwohash = (array, specifikSum) => {
             let objvalueResul = objvalueOne * objvalueTwo;
             let numberFormat  = new Intl.NumberFormat('fr-FR').format(objvalueResul);
 
-            problemOne.innerHTML = `Sum of two using hash function: 631 * 1 389 = ${numberFormat}`;
+            problemTwo.innerHTML = `Sum of two using hash function: 631 * 1 389 = ${numberFormat}`;
             //pushes elemnt till empty array av results
             resultsTwosum.push([hashObject[array[i]], array[i]])
         }
@@ -63,7 +63,7 @@ const sumOfTwohash = (array, specifikSum) => {
         
         let timeEnd = performance.now();
         let time = timeEnd - timeStart;
-        perforTimeOne.innerHTML = `It took ${time} miliseconds`;
+        perforTimeTwo.innerHTML = `It took ${time} miliseconds`;
 
         return resultsTwosum;
 }
@@ -96,19 +96,22 @@ const sumOfThreeloops = (array, specifikSum) => {
                 let objvalueResultofOnetwo  = objvalueOne * objvalueTwo;
                 let objvalueResult = objvalueResultofOnetwo * objvalueThree;
                 let numberFormat = objvalueResult.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                problemFour.innerHTML = `Sum of three using loops: 708 * 140 * 1 172 = ${numberFormat}`
-                }
+                problemThree.innerHTML = `Sum of three using loops: 708 * 140 * 1 172 = ${numberFormat}`;
 
+                }
             }
         }
     }
     let timeEnd = performance.now();
     let time = timeEnd - timeStart;
-    perforTimeFour.innerHTML = `It took ${time} miliseconds`;
+    perforTimeThree.innerHTML = `It took ${time} miliseconds`;
     return resultsThreeSum;  
 }
 
 console.log(sumOfThreeloops(arrayExpenses, 2020));
+
+
+
 
 // SUM OF THREE USING 2 POINTER METHOD
 const sumOfThree2pointer = (array, specifikSum) => {
@@ -159,7 +162,7 @@ const sumOfThree2pointer = (array, specifikSum) => {
 
         let timeEnd = performance.now();
         let time = timeEnd - timeStart;
-        perforTimeThree.innerHTML = `It took ${time} miliseconds`;
+        perforTimeFour.innerHTML = `It took ${time} miliseconds`;
         return newArray; 
 };
 
