@@ -13,7 +13,7 @@ const arrayExpenses = [1228, 1584, 1258, 1692, 1509, 1927, 1177, 1854, 1946, 181
 
 // SUM OF TWO USING LOOPS
 const sumOfTwoloops = (arr, sum) => {
-    const noHash = [];
+    const resultLoops = [];
     let timeStart = performance.now();
 // first loop throug array and get index
     for(let i = 0; i < arr.length; i++){
@@ -25,7 +25,7 @@ const sumOfTwoloops = (arr, sum) => {
                 let numberFormat  = new Intl.NumberFormat('fr-FR').format(objvalueResul);
 
                 problemOne.innerHTML = `Sum of two using loops: 631 * 1389 = ${numberFormat}`;
-                noHash.push(arr[i], arr[j]);
+                resultLoops.push(arr[i], arr[j]);
             }
         }
 
@@ -34,31 +34,31 @@ const sumOfTwoloops = (arr, sum) => {
         perforTimeOne.innerHTML = `It took ${time} miliseconds`;
         }
     
-        return noHash;
+        return resultLoops ;
 }
 
 console.log(sumOfTwoloops(arrayExpenses, 2020));
 
-// SUM OF TWO USING HASH
-const sumOfTwohash = (array, specifikSum) => {
-    hashObject = {};
+// SUM OF TWO USING OBJECT
+const sumOfTwoObject = (array, specifikSum) => {
+    arrayObject = {};
     const resultsTwosum = [];
     let timeStart = performance.now();
     // first loop throug array and get index
     for(let i = 0; i < array.length; i++){
-        // to simplify hash function uses the index/key from array to get second index.
-        if(hashObject[array[i]]){
+        // an object uses the index/key from array to get second index.
+        if(arrayObject[array[i]]){
             
-            let objvalueOne = hashObject[array[i]];
+            let objvalueOne = arrayObject[array[i]];
             let objvalueTwo = array[i];
             let objvalueResul = objvalueOne * objvalueTwo;
             let numberFormat  = new Intl.NumberFormat('fr-FR').format(objvalueResul);
 
-            problemTwo.innerHTML = `Sum of two using hash function: 631 * 1 389 = ${numberFormat}`;
+            problemTwo.innerHTML = `Sum of two using a object: 631 * 1 389 = ${numberFormat}`;
             //pushes elemnt till empty array av results
-            resultsTwosum.push([hashObject[array[i]], array[i]])
+            resultsTwosum.push([arrayObject[array[i]], array[i]])
         }
-        hashObject[specifikSum - array[i]] = array[i];
+        arrayObject[specifikSum - array[i]] = array[i];
     }
         
         let timeEnd = performance.now();
@@ -69,7 +69,7 @@ const sumOfTwohash = (array, specifikSum) => {
 }
 
 
-console.log(sumOfTwohash(arrayExpenses, 2020));
+console.log(sumOfTwoObject(arrayExpenses, 2020));
 
 
 
